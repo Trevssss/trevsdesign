@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DAVY SPORTIN GOODS - basketball shoes and sports essentials for your next move.">
+    <title>DAVY SPORTIN GOODS | Basketball Essentials</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #101820;
+            --cream: #f6f1e8;
+            --orange: #f25c2a;
+            --yellow: #f8c744;
+            --blue: #c45a32;
+            --white: #fffdf8;
+            --line: rgba(16, 24, 32, .14);
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            background: var(--cream);
+            color: var(--ink);
+            font-family: "DM Sans", sans-serif;
+        }
+        a { color: inherit; text-decoration: none; }
+        img { display: block; width: 100%; }
+        .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+
+        .announcement {
+            padding: 10px 20px;
+            background: var(--ink);
+            color: var(--white);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 22px 0;
+        }
+        .logo {
+            font-family: "Barlow Condensed", sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -.02em;
+            line-height: .8;
+        }
+        .logo span { color: var(--orange); }
+        .nav-links { display: flex; gap: 28px; font-size: .86rem; font-weight: 700; }
+        .nav-links a:hover { color: var(--orange); }
+        .nav-cta, .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 0;
+            background: var(--orange);
+            color: var(--white);
+            cursor: pointer;
+            font: 700 .83rem "DM Sans", sans-serif;
+            letter-spacing: .04em;
+            padding: 13px 19px;
+            text-transform: uppercase;
+            transition: transform .2s, background .2s;
+        }
+        .button:hover, .nav-cta:hover { background: var(--blue); transform: translateY(-2px); }
+
+        .hero {
+            min-height: 570px;
+            display: grid;
+            align-items: end;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(90deg, rgba(16,24,32,.96) 0%, rgba(16,24,32,.62) 47%, rgba(16,24,32,.12) 100%), url("https://images.unsplash.com/photo-1518407613690-d9fc990e795f?auto=format&fit=crop&w=1800&q=85") center/cover;
+        }
+        .hero-content { padding: 80px 0 68px; color: var(--white); max-width: 620px; }
+        .kicker { color: var(--yellow); font-size: .76rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+        h1, h2, h3 { font-family: "Barlow Condensed", sans-serif; text-transform: uppercase; }
+        h1 { font-size: clamp(4.3rem, 10vw, 8.5rem); line-height: .82; letter-spacing: -.03em; margin: 18px 0 22px; }
+        .hero-content p { color: rgba(255,253,248,.82); font-size: 1.08rem; line-height: 1.6; max-width: 450px; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+        .button.light { background: var(--white); color: var(--ink); }
+        .button.light:hover { background: var(--yellow); }
+        .hero-badge {
+            position: absolute; right: 7%; top: 14%;
+            display: grid; place-items: center; width: 132px; height: 132px;
+            border-radius: 50%; background: var(--yellow); color: var(--ink);
+            font-family: "Barlow Condensed", sans-serif; font-size: 1.3rem; line-height: .9; text-align: center; transform: rotate(11deg);
+        }
+
+        .section { padding: 92px 0; }
+        .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 32px; }
+        h2 { font-size: clamp(2.8rem, 6vw, 5rem); line-height: .85; margin: 0; }
+        .section-heading p { max-width: 330px; color: #56616a; font-size: .94rem; line-height: 1.6; margin: 0; }
+        .products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+        .product { background: var(--white); border: 1px solid var(--line); position: relative; }
+        .product-image { aspect-ratio: 1 / 1.03; overflow: hidden; background: #e8e3d9; }
+        .product-image img { height: 100%; object-fit: cover; transition: transform .5s; }
+        .product:hover .product-image img { transform: scale(1.05); }
+        .tag { position: absolute; top: 14px; left: 14px; background: var(--yellow); padding: 7px 10px; font-size: .7rem; font-weight: 800; text-transform: uppercase; }
+        .product-info { padding: 20px; }
+        .product-info h3 { font-size: 1.65rem; margin: 0 0 6px; }
+        .product-info p { color: #69737b; font-size: .87rem; margin: 0 0 16px; }
+        .price-row { display: flex; align-items: center; justify-content: space-between; }
+        .price { font-size: 1.2rem; font-weight: 800; }
+        .buy { border: 1px solid var(--ink); background: transparent; color: var(--ink); padding: 10px 13px; }
+        .buy:hover { background: var(--ink); color: var(--white); }
+
+        .sport-band { background: var(--blue); color: var(--white); padding: 28px 0; overflow: hidden; }
+        .sport-band p { margin: 0; font-family: "Barlow Condensed", sans-serif; font-size: clamp(2rem, 5vw, 4rem); font-weight: 700; letter-spacing: .03em; text-align: center; text-transform: uppercase; }
+        .sport-band span { color: var(--yellow); }
+
+        .about-grid, .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+        .about-image { min-height: 440px; background: url("https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1000&q=85") center/cover; }
+        .about-copy p { color: #56616a; line-height: 1.7; }
+        .stat-row { display: flex; gap: 42px; margin-top: 34px; }
+        .stat strong { display: block; font-family: "Barlow Condensed", sans-serif; font-size: 2.7rem; line-height: 1; }
+        .stat small { color: #69737b; font-size: .74rem; text-transform: uppercase; }
+
+        .contact-section { background: var(--yellow); }
+        .contact-grid { align-items: start; }
+        .contact-copy p { max-width: 420px; line-height: 1.65; }
+        .contact-list { display: grid; gap: 12px; }
+        .contact-card { display: flex; align-items: center; gap: 16px; background: var(--white); padding: 18px 20px; }
+        .contact-icon { display: grid; place-items: center; width: 42px; height: 42px; background: var(--ink); color: var(--yellow); font-size: 1rem; font-weight: 800; }
+        .contact-card small { display: block; color: #69737b; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+        .contact-card strong { font-size: .96rem; }
+
+        .background-tool { border-top: 1px solid var(--line); padding: 25px 0; }
+        .background-tool-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+        .background-tool p { margin: 0; color: #56616a; font-size: .84rem; }
+        .background-tool label { background: var(--ink); color: var(--white); cursor: pointer; font-size: .78rem; font-weight: 700; padding: 12px 16px; text-transform: uppercase; }
+        #background-input { display: none; }
+        footer { background: var(--ink); color: var(--white); padding: 24px 0; }
+        .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+        footer p { color: #aab1b6; font-size: .75rem; margin: 0; }
+        .footer-links { display: flex; gap: 16px; font-size: .78rem; font-weight: 700; }
+
+        @media (max-width: 720px) {
+            .container { width: min(100% - 28px, 560px); }
+            nav { padding: 18px 0; }
+            .nav-links { display: none; }
+            .hero { min-height: 610px; }
+            .hero-content { padding: 54px 0; }
+            .hero-badge { right: 5%; top: 9%; width: 100px; height: 100px; font-size: 1rem; }
+            .section { padding: 65px 0; }
+            .section-heading, .background-tool-inner { align-items: start; flex-direction: column; }
+            .products, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+            .about-grid, .contact-grid { gap: 30px; }
+            .about-image { min-height: 300px; order: 2; }
+            .footer-inner { align-items: start; flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="announcement">Free shipping on orders over $100 • Built for the next play</div>
+    <header class="container">
+        <nav aria-label="Main navigation">
+            <a class="logo" href="#top">DAVY <span>SPORTIN</span><br>GOODS</a>
+            <div class="nav-links">
+                <a href="#shop">Shop</a>
+                <a href="#about">Our game</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <a class="nav-cta" href="#shop">Shop shoes</a>
+        </nav>
+    </header>
+
+    <main id="top">
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="kicker">Basketball essentials / Est. 2024</div>
+                <h1>Own your<br>next move.</h1>
+                <p>Performance gear for players who bring their own energy. Lace up, step out, and let your game do the talking.</p>
+                <div class="hero-actions">
+                    <a class="button" href="#shop">Explore the collection</a>
+                    <a class="button light" href="#contact">Get in touch</a>
+                </div>
+            </div>
+            <div class="hero-badge">PLAY<br>LOUD<br>★</div>
+        </section>
+
+        <section class="section" id="shop">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Game-day<br>rotation</h2>
+                    <p>Fresh footwear picked for quick cuts, high jumps, and long runs. Find your pair and get moving.</p>
+                </div>
+                <div class="products">
+                    <article class="product">
+                        <div class="product-image"><span class="tag">Best seller</span><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85" alt="Bright red athletic shoe"></div>
+                        <div class="product-info"><h3>Flight Red 01</h3><p>Fast feel • Cushioned landing</p><div class="price-row"><span class="price">$89.00</span><a class="button buy" href="#contact">Get yours</a></div></div>
+                    </article>
+                    <article class="product">
+                        <div class="product-image"><span class="tag">New drop</span><img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=900&q=85" alt="White and black basketball shoe"></div>
+                        <div class="product-info"><h3>Baseline Black</h3><p>Locked-in support • Court ready</p><div class="price-row"><span class="price">$105.00</span><a class="button buy" href="#contact">Get yours</a></div></div>
+                    </article>
+                    <article class="product">
+                        <div class="product-image"><img src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=900&q=85" alt="Classic white sports shoes"></div>
+                        <div class="product-info"><h3>Courtside White</h3><p>Clean look • All-day comfort</p><div class="price-row"><span class="price">$79.00</span><a class="button buy" href="#contact">Get yours</a></div></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <div class="sport-band"><p>Run it up <span>•</span> Rep your team <span>•</span> Repeat</p></div>
+
+        <section class="section" id="about">
+            <div class="container about-grid">
+                <div class="about-image" role="img" aria-label="Basketball player on a court"></div>
+                <div class="about-copy">
+                    <div class="kicker">More than a shoe</div>
+                    <h2>Made for<br>your moment.</h2>
+                    <p>DAVY SPORTIN GOODS is for the early-morning shootaround, the packed gym, the driveway game, and every moment in between. Sport is how we show up, connect, and keep going.</p>
+                    <div class="stat-row"><div class="stat"><strong>01</strong><small>Good energy</small></div><div class="stat"><strong>24/7</strong><small>Game mode</small></div><div class="stat"><strong>100%</strong><small>Your style</small></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section section" id="contact">
+            <div class="container contact-grid">
+                <div class="contact-copy"><div class="kicker">Pull up anytime</div><h2>Let’s talk<br>sports.</h2><p>Questions about a pair, a size, or the next drop? Reach out through any of the channels below. Replace the sample details with your own contact information.</p></div>
+                <div class="contact-list">
+                    <a class="contact-card" href="mailto:your.email@example.com"><span class="contact-icon">@</span><span><small>Email</small><strong>your.email@example.com</strong></span></a>
+                    <a class="contact-card" href="https://www.snapchat.com/" target="_blank" rel="noopener"><span class="contact-icon">S</span><span><small>Snapchat</small><strong>@your_snapchat</strong></span></a>
+                    <a class="contact-card" href="https://www.tiktok.com/" target="_blank" rel="noopener"><span class="contact-icon">♪</span><span><small>TikTok</small><strong>@your_tiktok</strong></span></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="background-tool">
+            <div class="container background-tool-inner">
+                <p><strong>Make it yours.</strong> Add a background image to customize the hero area.</p>
+                <label for="background-input">Choose background image</label>
+                <input id="background-input" type="file" accept="image/*">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner"><p>© 2024 DAVY SPORTIN GOODS. Keep playing.</p><div class="footer-links"><a href="#shop">Shop</a><a href="#contact">Contact</a><a href="index.html">Home</a><a href="#top">Back to top ↑</a></div></div>
+    </footer>
+    <script>
+        const backgroundInput = document.querySelector('#background-input');
+        const hero = document.querySelector('.hero');
+
+        backgroundInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (!file) return;
+            const imageUrl = URL.createObjectURL(file);
+            hero.style.backgroundImage = `linear-gradient(90deg, rgba(16,24,32,.96) 0%, rgba(16,24,32,.62) 47%, rgba(16,24,32,.12) 100%), url("${imageUrl}")`;
+        });
+    </script>
+</body>
+</html>

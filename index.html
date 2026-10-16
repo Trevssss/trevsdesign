@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TREVS DESIGN creates distinctive websites, logos, fliers and brands for ambitious businesses at accessible prices.">
+  <title>TREVS DESIGN | Web, Brand &amp; Graphic Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fff4e8;
+      --bg-alt: #ffead5;
+      --surface: #ffffff;
+      --surface-card: #ffffff;
+      --surface-border: #e2e8f0;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --blue: #c45a32;
+      --blue-glow: rgba(196, 90, 50, 0.25);
+      --indigo: #a7462b;
+      --indigo-glow: rgba(124, 45, 18, 0.25);
+      --purple: #7c2d12;
+      --coral: #f43f5e;
+      --coral-glow: rgba(244, 63, 94, 0.25);
+      --orange: #f97316;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --grad-primary: linear-gradient(135deg, #d97706 0%, #c2410c 52%, #7c2d12 100%);
+      --grad-warm: linear-gradient(135deg, #f43f5e 0%, #fb7185 50%, #f97316 100%);
+      --grad-aurora: linear-gradient(135deg, #d97706 0%, #c2410c 50%, #f43f5e 100%);
+      --mono: "DM Mono", monospace;
+      --sans: "Manrope", sans-serif;
+      --radius-pill: 9999px;
+      --radius-card: 24px;
+      --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 12px 30px -10px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 25px 50px -12px rgba(15, 23, 42, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--bg);
+      font-family: var(--sans);
+      background-image: 
+        radial-gradient(circle at 12% 15%, rgba(196, 90, 50, 0.06) 0%, transparent 45%),
+        radial-gradient(circle at 88% 25%, rgba(244, 63, 94, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 50% 85%, rgba(124, 45, 18, 0.05) 0%, transparent 50%);
+      background-attachment: fixed;
+    }
+    a { color: inherit; text-decoration: none; }
+    .shell { width: min(1200px, calc(100% - 48px)); margin: 0 auto; }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 90px;
+      border-bottom: 1px solid var(--surface-border);
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(16px);
+      z-index: 100;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: -.04em;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text);
+    }
+    .logo span {
+      background: var(--grad-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .logo .badge-team {
+      font-size: 10px;
+      font-family: var(--mono);
+      background: #fff1e6;
+      color: var(--blue);
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid #fed7aa;
+      letter-spacing: .08em;
+      font-weight: 700;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font: 12px var(--mono);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    nav a {
+      color: var(--text-muted);
+      transition: color .2s ease;
+      position: relative;
+      font-weight: 600;
+    }
+    nav a:hover, nav a.is-active {
+      color: var(--blue);
+    }
+    nav a.is-active:after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--grad-primary);
+      border-radius: var(--radius-pill);
+    }
+    .nav-cta {
+      padding: 12px 24px;
+      color: white;
+      background: var(--grad-primary);
+      border-radius: var(--radius-pill);
+      font-weight: 800;
+      letter-spacing: .04em;
+      box-shadow: 0 6px 20px var(--blue-glow);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px var(--blue-glow);
+      color: white;
+    }
+
+    /* Common typography & components */
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--blue);
+      font: 11px var(--mono);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .eyebrow-pill {
+      background: #fff1e6;
+      border: 1px solid #fed7aa;
+      color: var(--blue);
+      padding: 5px 14px;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
+    }
+
+    /* Curved pill buttons */
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 30px;
+      background: var(--grad-primary);
+      color: white;
+      font-weight: 800;
+      font-size: 14px;
+      border-radius: var(--radius-pill);
+      border: 0;
+      cursor: pointer;
+      box-shadow: 0 8px 24px var(--blue-glow);
+      transition: transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s cubic-bezier(.16,1,.3,1);
+    }
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px var(--blue-glow);
+    }
+    .button.btn-warm {
+      background: var(--grad-warm);
+      box-shadow: 0 8px 24px var(--coral-glow);
+    }
+    .button.btn-warm:hover {
+      box-shadow: 0 12px 32px var(--coral-glow);
+    }
+    .button.btn-outline {
+      background: white;
+      border: 1px solid var(--surface-border);
+      color: var(--text);
+      box-shadow: var(--shadow-sm);
+    }
+    .button.btn-outline:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 660px;
+      padding: 100px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero:after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: 60px;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(124, 45, 18, 0.12) 0%, rgba(196, 90, 50, 0.05) 50%, transparent 70%);
+      pointer-events: none;
+      filter: blur(40px);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
+      gap: 70px;
+      position: relative;
+      z-index: 1;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(52px, 7.5vw, 96px);
+      line-height: .95;
+      letter-spacing: -.07em;
+      font-weight: 900;
+      color: var(--text);
+    }
+    h1 em {
+      font-style: normal;
+      background: var(--grad-aurora);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-copy {
+      max-width: 480px;
+      margin: 28px 0 35px;
+      color: var(--text-muted);
+      font-size: 18px;
+      line-height: 1.7;
+    }
+    .hero-art {
+      min-height: 420px;
+      position: relative;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      background: url("https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=85") center/cover;
+      border: 1px solid var(--surface-border);
+      box-shadow: var(--shadow-lg);
+    }
+    .hero-art:before {
+      content: "TREVS DESIGN TEAM / 2026";
+      position: absolute;
+      top: 18px;
+      left: 20px;
+      color: white;
+      font: 11px var(--mono);
+      letter-spacing: .12em;
+      background: rgba(15, 23, 42, 0.85);
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      backdrop-filter: blur(8px);
+    }
+    .art-tag {
+      position: absolute;
+      right: -15px;
+      bottom: 25px;
+      padding: 16px 24px;
+      border-radius: var(--radius-pill);
+      color: white;
+      background: var(--grad-warm);
+      font: 12px var(--mono);
+      font-weight: 800;
+      text-align: center;
+      transform: rotate(5deg);
+      box-shadow: 0 10px 25px var(--coral-glow);
+    }
+
+    /* Stats */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 35px 0;
+      border-top: 1px solid var(--surface-border);
+      border-bottom: 1px solid var(--surface-border);
+      margin-top: 50px;
+    }
+    .stat {
+      background: white;
+      padding: 24px 28px;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--surface-border);
+      box-shadow: var(--shadow-sm);
+      transition: transform .3s ease, border-color .3s ease;
+    }
+    .stat:hover {
+      transform: translateY(-4px);
+      border-color: var(--blue);
+      box-shadow: var(--shadow-md);
+    }
+    .stat strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 32px;
+      letter-spacing: -.05em;
+      background: var(--grad-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .stat span {
+      color: var(--text-muted);
+      font: 12px var(--mono);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    /* Sections */
+    section { padding: 105px 0; }
+    .section-heading {
+      display: grid;
+      grid-template-columns: .4fr 1fr;
+      gap: 50px;
+      margin-bottom: 60px;
+    }
+    h2 {
+      max-width: 720px;
+      margin: 0;
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: .98;
+      letter-spacing: -.06em;
+      font-weight: 900;
+      color: var(--text);
+    }
+    h2 em {
+      font-style: normal;
+      background: var(--grad-aurora);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .intro {
+      max-width: 480px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    /* Services */
+    .services { background: var(--bg-alt); }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .service {
+      display: block;
+      padding: 38px 32px;
+      background: white;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--surface-border);
+      box-shadow: var(--shadow-sm);
+      transition: transform .4s cubic-bezier(.16,1,.3,1), border-color .4s ease, box-shadow .4s ease;
+    }
+    .service:hover {
+      transform: translateY(-6px);
+      border-color: var(--blue);
+      box-shadow: var(--shadow-lg);
+    }
+    .service-icon {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      margin-bottom: 22px;
+      color: white;
+      background: var(--grad-primary);
+      border-radius: var(--radius-pill);
+      font: 18px var(--mono);
+      box-shadow: 0 6px 18px var(--blue-glow);
+    }
+    .service:nth-child(2) .service-icon {
+      background: var(--grad-warm);
+      box-shadow: 0 6px 18px var(--coral-glow);
+    }
+    .service:nth-child(3) .service-icon {
+      background: var(--grad-aurora);
+      box-shadow: 0 6px 18px var(--indigo-glow);
+    }
+    .service-number {
+      color: var(--blue);
+      font: 11px var(--mono);
+      letter-spacing: .1em;
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .service h3 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      letter-spacing: -.04em;
+    }
+    .service p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 14.5px;
+      line-height: 1.7;
+    }
+
+    /* Strong Valid Portfolio */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .portfolio-card {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--surface-border);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform .4s cubic-bezier(.16,1,.3,1), border-color .4s ease, box-shadow .4s ease;
+    }
+    .portfolio-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--indigo);
+      box-shadow: var(--shadow-lg);
+    }
+    .portfolio-card.featured-case {
+      grid-column: span 2;
+    }
+    .portfolio-img {
+      height: 240px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .portfolio-card.featured-case .portfolio-img {
+      height: 300px;
+    }
+    .portfolio-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--surface-border);
+      backdrop-filter: blur(8px);
+      color: var(--blue);
+      font: 11px var(--mono);
+      font-weight: 700;
+      border-radius: var(--radius-pill);
+      letter-spacing: .08em;
+      box-shadow: var(--shadow-sm);
+    }
+    .portfolio-badge.live-tag {
+      background: var(--grad-primary);
+      color: white;
+      border: 0;
+    }
+    .portfolio-body {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+    .portfolio-title {
+      margin: 0 0 10px;
+      font-size: 22px;
+      letter-spacing: -.04em;
+      color: var(--text);
+    }
+    .portfolio-desc {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.65;
+      margin: 0 0 18px;
+    }
+    .portfolio-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+    }
+    .tag-chip {
+      font: 11px var(--mono);
+      padding: 5px 12px;
+      background: var(--bg-alt);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-pill);
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Process Section */
+    .process { background: #0f172a; color: white; }
+    .process .eyebrow-pill { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.2); color: #38bdf8; }
+    .process h2 { color: white; }
+    .process .intro { color: #94a3b8; }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .step {
+      background: #1e293b;
+      padding: 30px 24px;
+      border-radius: var(--radius-card);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+    }
+    .step b {
+      display: inline-grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      background: rgba(217, 119, 6, 0.15);
+      border: 1px solid #38bdf8;
+      color: #38bdf8;
+      border-radius: var(--radius-pill);
+      font: 12px var(--mono);
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+    .step h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      letter-spacing: -.03em;
+      color: white;
+    }
+    .step p {
+      margin: 0;
+      color: #cbd5e1;
+      font-size: 13.5px;
+      line-height: 1.65;
+    }
+
+    /* Pricing Section (Build a Plan Main Plan) */
+    .pricing { background: var(--bg); }
+    .pricing-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: stretch;
+    }
+    .price-card {
+      padding: 44px 38px;
+      background: white;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--surface-border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+    .price-card.featured-main {
+      border: 2px solid var(--blue);
+      box-shadow: var(--shadow-lg);
+    }
+    .plan-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--grad-primary);
+      color: white;
+      font: 11px var(--mono);
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      border-radius: var(--radius-pill);
+      margin-bottom: 22px;
+      width: fit-content;
+    }
+    .price-card h3 {
+      margin: 0 0 16px;
+      font-size: 42px;
+      letter-spacing: -.06em;
+      font-weight: 900;
+    }
+    .price-lead {
+      color: var(--text-muted);
+      font-size: 15.5px;
+      line-height: 1.7;
+      margin: 0 0 26px;
+    }
+    .base-rates {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 26px;
+      padding: 22px;
+      background: var(--bg-alt);
+      border: 1px solid var(--surface-border);
+      border-radius: 18px;
+    }
+    .base-rate-item span {
+      display: block;
+      font: 11px var(--mono);
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+    .base-rate-item strong {
+      font-size: 30px;
+      font-weight: 900;
+      color: var(--text);
+      letter-spacing: -.04em;
+    }
+    .plan-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+      font-size: 14px;
+      line-height: 2.2;
+      color: #334155;
+    }
+    .plan-features li:before {
+      content: "✓";
+      margin-right: 12px;
+      color: var(--emerald);
+      font-weight: 800;
+    }
+
+    /* Maintenance Notice */
+    .maintenance-banner-box {
+      background: #fff1e6;
+      border: 1px dashed var(--blue);
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 28px;
+    }
+    .maintenance-banner-box strong {
+      display: block;
+      font: 11px var(--mono);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--blue);
+      margin-bottom: 6px;
+    }
+    .maintenance-banner-box p {
+      margin: 0;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #7c2d12;
+    }
+    .maintenance-banner-box em {
+      color: var(--blue);
+      font-style: normal;
+      font-weight: 800;
+    }
+
+    /* Interactive Live Estimator Card */
+    .calculator-card {
+      padding: 44px 38px;
+      background: white;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--surface-border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-md);
+    }
+    .calc-tag {
+      font: 11px var(--mono);
+      color: var(--coral);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: inline-block;
+      padding: 5px 12px;
+      background: #ffe4e6;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
+    }
+    .calculator-card h3 {
+      margin: 0 0 10px;
+      font-size: 30px;
+      letter-spacing: -.04em;
+      font-weight: 900;
+    }
+    .calc-sub {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin: 0 0 24px;
+      line-height: 1.6;
+    }
+    .calc-group { margin-bottom: 20px; }
+    .calc-group label {
+      display: block;
+      font: 11px var(--mono);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: .08em;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+    .calc-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+    }
+    .calc-btn {
+      display: block;
+      text-align: center;
+      padding: 12px 14px;
+      font-size: 12.5px;
+      font-weight: 700;
+      border: 1px solid var(--surface-border);
+      background: var(--bg-alt);
+      color: var(--text-muted);
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      transition: all .25s ease;
+      font-family: var(--sans);
+    }
+    .calc-btn:hover {
+      border-color: var(--blue);
+      color: var(--text);
+      background: white;
+    }
+    .calc-btn.is-active {
+      background: var(--grad-primary);
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 4px 18px var(--blue-glow);
+    }
+
+    .calc-result-box {
+      background: #f8fafc;
+      border: 2px solid #fed7aa;
+      border-radius: 20px;
+      padding: 24px;
+      margin: 24px 0;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .calc-result-box .amt-label {
+      font: 11px var(--mono);
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: var(--blue);
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+    .calc-result-box .amt-num {
+      font-size: 48px;
+      font-weight: 900;
+      letter-spacing: -.08em;
+      color: var(--text);
+      margin: 0;
+      line-height: 1;
+    }
+    .calc-result-box .amt-maint {
+      font: 12px var(--mono);
+      color: #047857;
+      margin-top: 10px;
+      font-weight: 700;
+    }
+    /* Contact Section without the redundant "Send an enquiry" button */
+    .contact-box {
+      background: var(--grad-primary);
+      border-radius: var(--radius-card);
+      padding: 70px 60px;
+      color: white;
+      box-shadow: 0 25px 60px var(--blue-glow);
+    }
+    .contact-box h2 {
+      font-size: clamp(40px, 5.5vw, 68px);
+      color: white;
+    }
+    .contact-box h2 em {
+      -webkit-text-fill-color: #fde047;
+    }
+    .contact-box form {
+      display: grid;
+      gap: 10px;
+      max-width: 520px;
+      margin-top: 28px;
+    }
+    .contact-box form label {
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .contact-box form input:not([type="checkbox"], [type="hidden"], [type="submit"]),
+    .contact-box form textarea {
+      width: 100%;
+      padding: 13px 15px;
+      border: 1px solid rgba(255, 255, 255, .55);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .96);
+      color: var(--text);
+      font: 14px var(--sans);
+    }
+    .contact-box form textarea {
+      resize: vertical;
+    }
+    .contact-box form button {
+      justify-self: start;
+      margin-top: 6px;
+      padding: 13px 28px;
+      border: 0;
+      border-radius: var(--radius-pill);
+      background: white;
+      color: var(--text);
+      font: 700 13px var(--mono);
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+    }
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 35px;
+    }
+    .contact-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      background: white;
+      border-radius: var(--radius-pill);
+      font: 13px var(--mono);
+      font-weight: 700;
+      color: var(--text);
+      box-shadow: var(--shadow-sm);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .contact-pill:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      color: var(--blue);
+    }
+
+    /* Footer */
+    footer {
+      padding: 30px 0;
+      color: var(--text-muted);
+      background: white;
+      font: 12px var(--mono);
+      border-top: 1px solid var(--surface-border);
+    }
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .section-heading, .pricing-layout { grid-template-columns: 1fr; gap: 40px; }
+      .service-grid, .portfolio-grid, .steps, .stats { grid-template-columns: 1fr; }
+      .portfolio-card.featured-case { grid-column: span 1; }
+      .contact-box { padding: 40px 28px; }
+      .footer-row { flex-direction: column; text-align: center; }
+    }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <a class="logo" href="#top">
+      TREVS<span>DESIGN</span>
+      <span class="badge-team">TEAM</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#studio">Studio</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#work">Portfolio</a>
+      <a href="#pricing">Pricing</a>
+      <a class="nav-cta" href="enquiry.html">Start a project</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <div class="eyebrow">
+            <span class="eyebrow-pill">Creative Agency / 2026</span>
+          </div>
+          <h1>Turn your designs into <em>your reality.</em></h1>
+          <p class="hero-copy">We build high-converting websites, distinctive logos, and striking marketing fliers shaped specifically for ambitious businesses.</p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <a class="button" href="enquiry.html">Start a project -&gt;</a>
+            <a class="button btn-outline" href="#work">View portfolio</a>
+          </div>
+        </div>
+        <div class="hero-art" role="img" aria-label="Creative design team workspace">
+          <div class="art-tag">MAKE IT<br>MEMORABLE ↘</div>
+        </div>
+      </div>
+      <div class="shell stats">
+        <div class="stat"><strong>01</strong><span>Clear strategy</span></div>
+        <div class="stat"><strong>02</strong><span>Dynamic visuals</span></div>
+        <div class="stat"><strong>03</strong><span>Guaranteed pricing</span></div>
+      </div>
+    </section>
+
+    <!-- Studio -->
+    <section id="studio">
+      <div class="shell section-heading">
+        <p class="eyebrow"><span class="eyebrow-pill">01 / The studio</span></p>
+        <div>
+          <h2>Exceptional design makes your brand <em>undeniable.</em></h2>
+          <p class="intro">TREVS DESIGN TEAM is an agile creative partner for founders, startups, and growing enterprises. You receive senior agency-grade precision with immediate, hands-on care.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" style="background: var(--bg-alt);">
+      <div class="shell section-heading">
+        <p class="eyebrow"><span class="eyebrow-pill">About the team</span></p>
+        <div>
+          <h2>Built around <em>your vision.</em></h2>
+          <p class="intro">TREVS DESIGN TEAM, led by Trevor Orji and the creative collective, partners with emerging and established businesses worldwide. We craft bespoke websites, memorable logos, and high-impact fliers tailored to your exact industry position.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow"><span class="eyebrow-pill">02 / What we do</span></p>
+          <div><h2>Design that works as hard as <em>you do.</em></h2></div>
+        </div>
+        <div class="service-grid">
+          <a class="service" href="enquiry.html?service=website">
+            <span class="service-icon" aria-hidden="true">/</span>
+            <span class="service-number">01 / WEB</span>
+            <h3>Web Design &amp; Build</h3>
+            <p>High-conversion responsive websites with tailored scope, interactive components, and ongoing maintenance.</p>
+          </a>
+          <a class="service" href="enquiry.html?service=graphics&amp;graphics_type=logo">
+            <span class="service-icon" aria-hidden="true">+</span>
+            <span class="service-number">02 / LOGOS</span>
+            <h3>Logo Design</h3>
+            <p>Distinctive vector logo marks, typography hierarchies, and cohesive brand systems for modern businesses.</p>
+          </a>
+          <a class="service" href="enquiry.html?service=graphics&amp;graphics_type=flier">
+            <span class="service-icon" aria-hidden="true">*</span>
+            <span class="service-number">03 / FLIERS</span>
+            <h3>Flier &amp; Poster Design</h3>
+            <p>High-energy promotional fliers, campaign posters, and social media launch assets ready for print and digital.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Strong Valid Portfolio -->
+    <section id="work">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow"><span class="eyebrow-pill">03 / Selected work</span></p>
+          <div><h2>A strong portfolio of <em>real impact.</em></h2></div>
+        </div>
+
+        <div class="portfolio-grid">
+          <!-- Case 1: Davy Sporting Goods (Links to live davy.html demo) -->
+          <article class="portfolio-card featured-case">
+            <div class="portfolio-img" style="background-image: linear-gradient(180deg, rgba(15,23,42,.1), rgba(15,23,42,.75)), url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=85');">
+              <span class="portfolio-badge live-tag">LIVE DEMO ↗</span>
+            </div>
+            <div class="portfolio-body">
+              <div>
+                <h3 class="portfolio-title"><a href="davy.html" target="_blank" style="text-decoration: underline;">DAVY SPORTIN GOODS — E-Commerce Web &amp; Brand System</a></h3>
+                <p class="portfolio-desc">Complete digital storefront for athletic basketball gear and footwear. Engineered with responsive grids, interactive product showcases, and high-impact branding. Click to explore the live website built by TREVS DESIGN TEAM.</p>
+              </div>
+              <div class="portfolio-tags">
+                <span class="tag-chip">Interactive Web Demo</span>
+                <span class="tag-chip">Brand Identity</span>
+                <span class="tag-chip">E-Commerce Architecture</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case 2: Kura Fintech Platform -->
+          <article class="portfolio-card">
+            <div class="portfolio-img" style="background-image: linear-gradient(180deg, rgba(15,23,42,.1), rgba(15,23,42,.75)), url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=85');">
+              <span class="portfolio-badge">WEB BUILD / SAAS</span>
+            </div>
+            <div class="portfolio-body">
+              <div>
+                <h3 class="portfolio-title">Kura Financial Web Platform</h3>
+                <p class="portfolio-desc">Corporate web portal and interactive customer loan interface with 6 dynamic pages, custom calculator, and dark mode.</p>
+              </div>
+              <div class="portfolio-tags">
+                <span class="tag-chip">Multi-Page Web</span>
+                <span class="tag-chip">FinTech UI</span>
+                <span class="tag-chip">Fast Turnaround</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case 3: Sola Luxury Brand -->
+          <article class="portfolio-card">
+            <div class="portfolio-img" style="background-image: linear-gradient(180deg, rgba(15,23,42,.1), rgba(15,23,42,.75)), url('https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=800&q=85');">
+              <span class="portfolio-badge">LOGO &amp; BRAND</span>
+            </div>
+            <div class="portfolio-body">
+              <div>
+                <h3 class="portfolio-title">Sola Luxury Supply Brand Kit</h3>
+                <p class="portfolio-desc">Minimalist vector logo suite, metallic packaging design, custom typography pairing, and luxury guidelines.</p>
+              </div>
+              <div class="portfolio-tags">
+                <span class="tag-chip">Logo Design</span>
+                <span class="tag-chip">Brand Identity</span>
+                <span class="tag-chip">Vector Assets</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case 4: Urban Pulse Flier Campaign -->
+          <article class="portfolio-card">
+            <div class="portfolio-img" style="background-image: linear-gradient(180deg, rgba(15,23,42,.1), rgba(15,23,42,.75)), url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=85');">
+              <span class="portfolio-badge">FLIER SUITE</span>
+            </div>
+            <div class="portfolio-body">
+              <div>
+                <h3 class="portfolio-title">Urban Pulse Festival Flier Series</h3>
+                <p class="portfolio-desc">High-contrast promotional fliers for festival announcements, Instagram story kits (9:16), and print-ready event posters.</p>
+              </div>
+              <div class="portfolio-tags">
+                <span class="tag-chip">Flier Design</span>
+                <span class="tag-chip">Event Campaign</span>
+                <span class="tag-chip">Print Ready</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case 5: Apex Logistics Freight Portal -->
+          <article class="portfolio-card">
+            <div class="portfolio-img" style="background-image: linear-gradient(180deg, rgba(15,23,42,.1), rgba(15,23,42,.75)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=85');">
+              <span class="portfolio-badge">CORPORATE WEB</span>
+            </div>
+            <div class="portfolio-body">
+              <div>
+                <h3 class="portfolio-title">Apex Logistics Global Web Portal</h3>
+                <p class="portfolio-desc">Multi-section corporate logistics portal with live package tracker simulation, route estimator, and customer support portal.</p>
+              </div>
+              <div class="portfolio-tags">
+                <span class="tag-chip">Web Architecture</span>
+                <span class="tag-chip">Dynamic Portal</span>
+                <span class="tag-chip">B2B Design</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow"><span class="eyebrow-pill">04 / The process</span></p>
+          <div><h2>From first thought to <em>fully formed.</em></h2><p class="intro">A straightforward, collaborative workflow designed for speed, clarity, and exceptional execution.</p></div>
+        </div>
+        <div class="steps">
+          <article class="step"><b>01</b><h3>Discover</h3><p>We clarify your audience, requirements, and exact project goals.</p></article>
+          <article class="step"><b>02</b><h3>Define</h3><p>We configure scope, deliverables, and direction to form the foundation.</p></article>
+          <article class="step"><b>03</b><h3>Design</h3><p>We build the visual system, responsive layouts, or fliers to perfection.</p></article>
+          <article class="step"><b>04</b><h3>Deliver</h3><p>You receive high-performance code, source files, and launch support.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing (Build a Plan Main Plan) -->
+    <section class="pricing" id="pricing">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow"><span class="eyebrow-pill">05 / The Main Plan</span></p>
+          <div><h2>Build a plan. <em>Calculated for you.</em></h2></div>
+        </div>
+        <div class="pricing-layout">
+          <!-- Main Plan Card -->
+          <article class="price-card featured-main">
+            <div>
+              <div class="plan-badge">★ THE MAIN PLAN / CUSTOM QUOTE</div>
+              <h3>Build a plan</h3>
+              <p class="price-lead">Every project is unique. Build a Plan shapes your investment around your scope, goals, and technical requirements. Projects start at ₦15,000 and can reach ₦230,000 for larger, highly customized demands.</p>
+              
+              <div class="base-rates">
+                <div class="base-rate-item">
+                  <span>Graphic Design From</span>
+                  <strong>₦15,000</strong>
+                </div>
+                <div class="base-rate-item">
+                  <span>Website Design From</span>
+                  <strong>₦25,000</strong>
+                </div>
+              </div>
+
+              <ul class="plan-features">
+                <li>Choose between Logo Design or Promotional Flier Design</li>
+                <li>Responsive, high-converting digital layout</li>
+                <li>Scope calculated specifically for your pages &amp; architectural complexity</li>
+                <li>Senior-level design &amp; direction by TREVS DESIGN TEAM</li>
+                <li>Fast delivery &amp; smooth setup support</li>
+              </ul>
+
+              <div class="maintenance-banner-box">
+                <strong>Website projects only:</strong>
+                <p>Website maintenance is <em>₦15,000 per month</em> or <em>₦20,000 per year</em>. This fee does not apply to flier or graphic design projects.</p>
+              </div>
+
+            </div>
+
+            <a class="button" href="enquiry.html">Build your plan &amp; proceed -&gt;</a>
+          </article>
+
+          <!-- Interactive Live Price Estimator Card -->
+          <article class="calculator-card">
+            <div>
+              <span class="calc-tag">LIVE PRICE ESTIMATOR</span>
+              <h3>Instant Quote Preview</h3>
+              <p class="calc-sub">Select your project parameters below to see your generated price in real time:</p>
+
+              <!-- Service -->
+              <div class="calc-group">
+                <label>Select Service</label>
+                <div class="calc-options">
+                  <button type="button" class="calc-btn is-active" data-group="h-service" data-val="website">Website Design</button>
+                  <button type="button" class="calc-btn" data-group="h-service" data-val="graphics">Graphic Design</button>
+                  <button type="button" class="calc-btn" data-group="h-service" data-val="bundle">Web + Graphics</button>
+                </div>
+              </div>
+
+              <!-- Graphic Design Sub-Options (Flier vs Logo) -->
+              <div class="calc-group" id="h-graphics-type-group" style="display: none;">
+                <label>Graphic Deliverable</label>
+                <div class="calc-options">
+                  <button type="button" class="calc-btn is-active" data-group="h-graphic-type" data-val="logo">Logo Design</button>
+                  <button type="button" class="calc-btn" data-group="h-graphic-type" data-val="flier">Flier Design</button>
+                  <button type="button" class="calc-btn" data-group="h-graphic-type" data-val="both">Logo + Flier</button>
+                </div>
+              </div>
+
+              <!-- Pages -->
+              <div class="calc-group" id="h-pages-group">
+                <label>Number of Website Pages</label>
+                <div class="calc-options">
+                  <button type="button" class="calc-btn is-active" data-group="h-pages" data-val="1-3">1 – 3 Pages</button>
+                  <button type="button" class="calc-btn" data-group="h-pages" data-val="4-6">4 – 6 Pages</button>
+                  <button type="button" class="calc-btn" data-group="h-pages" data-val="more-than-6">7+ Pages</button>
+                </div>
+              </div>
+
+              <!-- Complexity (Style without "very") -->
+              <div class="calc-group" id="h-complexity-group">
+                <label>Project Complexity</label>
+                <div class="calc-options">
+                  <button type="button" class="calc-btn is-active" data-group="h-complexity" data-val="standard">Standard</button>
+                  <button type="button" class="calc-btn" data-group="h-complexity" data-val="advanced">Advanced</button>
+                  <button type="button" class="calc-btn" data-group="h-complexity" data-val="custom">Bespoke / Highly Customized</button>
+                </div>
+              </div>
+
+              <!-- Result Box -->
+              <div class="calc-result-box">
+                <span class="amt-label">Generated Project Price</span>
+                <p class="amt-num" id="home-calc-price">₦25,000</p>
+                <div class="amt-maint">Website maintenance: ₦15,000/month or ₦20,000/year</div>
+              </div>
+            </div>
+
+            <a class="button btn-warm" id="home-calc-cta" href="enquiry.html?service=website&amp;pages=1-3&amp;complexity=standard">Lock in this price -&gt;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section without the redundant "Send an enquiry" button -->
+    <section class="contact" id="contact">
+      <div class="shell contact-box">
+        <div>
+          <p class="eyebrow" style="color: rgba(255,255,255,.9);"><span class="eyebrow-pill" style="background: rgba(255,255,255,.2); border-color: rgba(255,255,255,.3); color: white;">06 / Direct Contact</span></p>
+          <h2>Have a good idea? <em>Let's give it form.</em></h2>
+          <p style="max-width: 500px; color: rgba(255,255,255,.9); font-size: 16px; margin: 20px 0 30px; line-height: 1.7;">
+            Send a message to TREVS DESIGN TEAM and we’ll get back to you about your project.
+          </p>
+          <form action="https://splitforms.com/api/submit" method="POST">
+            <input type="hidden" name="access_key" value="e0411708a13f41918704dbf9a4bbf323">
+
+            <label for="sf-name">Name</label>
+            <input type="text" id="sf-name" name="name" autocomplete="name" required>
+
+            <label for="sf-email">Email</label>
+            <input type="email" id="sf-email" name="email" autocomplete="email" required>
+
+            <label for="sf-message">Message</label>
+            <textarea id="sf-message" name="message" rows="4" required></textarea>
+
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+            <button type="submit">Send</button>
+          </form>
+          <script src="https://splitforms.com/embed.js" async></script>
+          <div class="contact-links">
+            <a class="contact-pill" href="tel:08144438584">
+              <span>📞</span> Call 08144438584
+            </a>
+            <a class="contact-pill" href="https://wa.me/2348144438584" target="_blank" rel="noopener">
+              <span>💬</span> WhatsApp 08144438584
+            </a>
+            <a class="contact-pill" href="https://www.snapchat.com/add/trevsistokewl" target="_blank" rel="noopener">
+              <span>👻</span> Snapchat @trevsistokewl
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-row">
+      <span>© 2026 TREVS DESIGN TEAM</span>
+      <span>Web / Brand / Logo / Flier Design</span>
+      <a href="tel:08144438584">08144438584</a>
+    </div>
+  </footer>
+
+  <script>
+    const heroArt = document.querySelector('.hero-art');
+    const revealItems = document.querySelectorAll('section > .shell');
+    const navigationLinks = document.querySelectorAll('nav a:not(.nav-cta)');
+    const sections = document.querySelectorAll('main section[id]');
+
+    revealItems.forEach((item) => item.classList.add('reveal'));
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach((item) => revealObserver.observe(item));
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navigationLinks.forEach((link) => {
+            link.classList.toggle('is-active', link.getAttribute('href') === `#${entry.target.id}`);
+          });
+        }
+      });
+    }, { rootMargin: '-35% 0px -55% 0px' });
+
+    sections.forEach((section) => sectionObserver.observe(section));
+
+    if (heroArt && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      heroArt.addEventListener('pointermove', (event) => {
+        const bounds = heroArt.getBoundingClientRect();
+        const xOffset = ((event.clientX - bounds.left) / bounds.width - 0.5) * 10;
+        const yOffset = ((event.clientY - bounds.top) / bounds.height - 0.5) * 10;
+        heroArt.style.backgroundPosition = `${50 + xOffset}% ${50 + yOffset}%`;
+      });
+      heroArt.addEventListener('pointerleave', () => {
+        heroArt.style.backgroundPosition = '50% 50%';
+      });
+    }
+
+    // Home Interactive Price Estimator
+    const homeCalcPrice = document.querySelector('#home-calc-price');
+    const homeCalcCta = document.querySelector('#home-calc-cta');
+    const hPagesGroup = document.querySelector('#h-pages-group');
+    const hComplexityGroup = document.querySelector('#h-complexity-group');
+    const hGraphicsTypeGroup = document.querySelector('#h-graphics-type-group');
+    const homeCalcMaintenance = document.querySelector('.amt-maint');
+
+    let hService = 'website';
+    let hGraphicType = 'logo';
+    let hPages = '1-3';
+    let hComplexity = 'standard';
+
+    function updateHomeCalculator() {
+      let base = 25000;
+
+      if (hService === 'graphics') {
+        base = (hGraphicType === 'both') ? 25000 : 15000;
+        if (hPagesGroup) hPagesGroup.style.display = 'none';
+        if (hComplexityGroup) hComplexityGroup.style.display = 'block';
+        if (hGraphicsTypeGroup) hGraphicsTypeGroup.style.display = 'block';
+      } else if (hService === 'bundle') {
+        base = 35000;
+        if (hPagesGroup) hPagesGroup.style.display = 'block';
+        if (hComplexityGroup) hComplexityGroup.style.display = 'block';
+        if (hGraphicsTypeGroup) hGraphicsTypeGroup.style.display = 'block';
+      } else {
+        base = 25000;
+        if (hPagesGroup) hPagesGroup.style.display = 'block';
+        if (hComplexityGroup) hComplexityGroup.style.display = 'block';
+        if (hGraphicsTypeGroup) hGraphicsTypeGroup.style.display = 'none';
+      }
+
+      if (homeCalcMaintenance) homeCalcMaintenance.style.display = hService === 'graphics' ? 'none' : 'block';
+
+      const pageAddons = { '1-3': 0, '4-6': 25000, 'more-than-6': 50000 };
+      const extraPages = hService === 'graphics' ? 0 : (pageAddons[hPages] || 0);
+      const extraComplexity = hComplexity === 'custom'
+        ? (hService === 'graphics' ? 205000 : (hService === 'bundle' ? 145000 : 155000))
+        : (hComplexity === 'advanced' ? 25000 : 0);
+      const total = Math.min(base + extraPages + extraComplexity, 230000);
+      if (homeCalcPrice) homeCalcPrice.textContent = '₦' + total.toLocaleString();
+      if (homeCalcCta) {
+        homeCalcCta.href = `enquiry.html?service=${hService}&graphics_type=${hGraphicType}&pages=${hPages}&complexity=${hComplexity}&price=${total}`;
+      }
+    }
+
+    document.querySelectorAll('.calc-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const group = btn.dataset.group;
+        const val = btn.dataset.val;
+        document.querySelectorAll(`.calc-btn[data-group="${group}"]`).forEach((b) => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+
+        if (group === 'h-service') hService = val;
+        if (group === 'h-graphic-type') hGraphicType = val;
+        if (group === 'h-pages') hPages = val;
+        if (group === 'h-complexity') hComplexity = val;
+
+        updateHomeCalculator();
+      });
+    });
+
+    updateHomeCalculator();
+  </script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Method | TREVS DESIGN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fff7ed;
+      --surface: #ffffff;
+      --surface-card: #ffffff;
+      --surface-border: #e2e8f0;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --blue: #c45a32;
+      --blue-glow: rgba(196, 90, 50, 0.22);
+      --indigo: #a7462b;
+      --coral: #f43f5e;
+      --emerald: #10b981;
+      --grad-primary: linear-gradient(135deg, #d97706 0%, #c2410c 52%, #7c2d12 100%);
+      --mono: "DM Mono", monospace;
+      --sans: "Manrope", sans-serif;
+      --radius-pill: 9999px;
+      --radius-card: 26px;
+      --shadow-lg: 0 25px 60px -12px rgba(15, 23, 42, 0.15);
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      margin: 0;
+      color: var(--text);
+      background: var(--bg);
+      font-family: var(--sans);
+      background-image: 
+        radial-gradient(circle at 50% 15%, rgba(196, 90, 50, 0.08) 0%, transparent 55%),
+        radial-gradient(circle at 85% 85%, rgba(244, 63, 94, 0.06) 0%, transparent 50%);
+      padding: 24px;
+    }
+    .payment-card {
+      width: min(580px, 100%);
+      padding: 56px 42px;
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .payment-card:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 15%;
+      right: 15%;
+      height: 3px;
+      background: var(--grad-primary);
+      border-radius: var(--radius-pill);
+    }
+    .mark {
+      display: inline-grid;
+      width: 60px;
+      height: 60px;
+      place-items: center;
+      margin-bottom: 22px;
+      color: white;
+      background: var(--grad-primary);
+      border-radius: var(--radius-pill);
+      font-weight: 900;
+      font-size: 16px;
+      letter-spacing: .06em;
+      box-shadow: 0 8px 24px var(--blue-glow);
+    }
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-family: var(--mono);
+    }
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(34px, 6vw, 48px);
+      letter-spacing: -.05em;
+      font-weight: 900;
+      color: var(--text);
+    }
+    p { color: var(--text-muted); line-height: 1.7; font-size: 15px; margin: 0 0 24px; }
+    
+    .quote-box {
+      margin: 24px 0;
+      padding: 26px;
+      background: #f8fafc;
+      border: 1px solid var(--surface-border);
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+    }
+    .quote-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: var(--blue);
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: block;
+      font-family: var(--mono);
+    }
+    .quote-price {
+      font-size: clamp(40px, 6vw, 54px);
+      font-weight: 900;
+      color: var(--text);
+      margin: 4px 0 8px;
+      line-height: 1;
+      letter-spacing: -.06em;
+    }
+    .quote-sub { font-size: 13.5px; color: var(--text-muted); margin: 0; }
+    .quote-maintenance {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #16a34a;
+      font-weight: 700;
+      font-family: var(--mono);
+    }
+
+    .method {
+      display: block;
+      margin-top: 26px;
+      padding: 18px 26px;
+      color: white;
+      background: var(--grad-primary);
+      border-radius: var(--radius-pill);
+      font-weight: 800;
+      font-size: 15px;
+      text-decoration: none;
+      box-shadow: 0 8px 25px var(--blue-glow);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .method:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 35px var(--blue-glow);
+    }
+    .back {
+      display: inline-block;
+      margin-top: 24px;
+      color: var(--blue);
+      font-size: 13px;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      font-family: var(--mono);
+      font-weight: 600;
+    }
+    .home {
+      display: inline-block;
+      margin: 24px 0 0 20px;
+      color: var(--text-muted);
+      font-size: 13px;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      font-family: var(--mono);
+    }
+    .team-badge-text {
+      margin-top: 24px;
+      font-size: 12px;
+      color: #64748b;
+      font-family: var(--mono);
+      background: #fff3e6;
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <main class="payment-card">
+    <div class="mark">TDT</div>
+    <p class="eyebrow">TREVS DESIGN TEAM / PAYMENT</p>
+    <h1>How do you pay?</h1>
+    <p>Your enquiry has been received by <strong>TREVS DESIGN TEAM</strong>. Review your generated project total below and select a payment method to complete your reservation.</p>
+
+    <div class="quote-box" id="quote-box">
+      <span class="quote-label">Generated Total Price</span>
+      <div class="quote-price" id="quote-price-display">₦25,000</div>
+      <p class="quote-sub" id="quote-service-display">Build a Plan — Custom Project</p>
+      <div class="quote-maintenance" id="quote-maintenance">Website maintenance: ₦15,000/month or ₦20,000/year</div>
+    </div>
+
+    <a class="method" id="transfer-link" href="bank-transfer.html">Bank transfer -&gt;</a>
+    <a class="back" href="enquiry.html">Back to enquiry</a>
+    <a class="home" href="index.html">Home</a>
+
+    <div>
+      <div class="team-badge-text">
+        Managed by: <strong>TREVS DESIGN TEAM</strong>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Retrieve generated price from URL parameter or localStorage
+    const params = new URLSearchParams(window.location.search);
+    const priceDisplay = document.querySelector('#quote-price-display');
+    const serviceDisplay = document.querySelector('#quote-service-display');
+    const transferLink = document.querySelector('#transfer-link');
+    const maintenanceNote = document.querySelector('#quote-maintenance');
+
+    let amount = params.get('amount');
+    let service = params.get('service');
+
+    if (!amount || !service) {
+      try {
+        const saved = localStorage.getItem('trevs_enquiry');
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (parsed.amount) amount = parsed.amount;
+          if (!service && parsed.service) service = parsed.service;
+        }
+      } catch (err) {
+        console.warn('LocalStorage read error:', err);
+      }
+    }
+
+    if (amount) {
+      const numAmount = Number(amount);
+      if (!isNaN(numAmount)) {
+        priceDisplay.textContent = '₦' + numAmount.toLocaleString();
+        transferLink.href = `bank-transfer.html?amount=${numAmount}&service=${encodeURIComponent(service || '')}`;
+      } else {
+        priceDisplay.textContent = amount.startsWith('₦') ? amount : '₦' + amount;
+        transferLink.href = `bank-transfer.html?amount=${encodeURIComponent(amount)}&service=${encodeURIComponent(service || '')}`;
+      }
+    }
+
+    if (service) {
+      serviceDisplay.textContent = `Build a Plan — ${service}`;
+      maintenanceNote.style.display = service.toLowerCase().includes('website') ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>
